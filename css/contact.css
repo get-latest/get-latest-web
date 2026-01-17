@@ -1,0 +1,78 @@
+/* --- CONTACT HERO --- */
+.contact-hero-sub {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+/* --- CONTACT FORM (Minimalist Style) --- */
+.contact-form-container {
+    padding: clamp(2rem, 5vw, 4rem) 10%;
+}
+
+.form-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+}
+
+.form-control {
+    border: none;
+    border-bottom: 1px solid #ddd;
+    border-radius: 0;
+    padding: 0.75rem 0;
+    background: transparent;
+    transition: border-color 0.3s ease;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: var(--primary-teal);
+    background: transparent;
+}
+
+/* Specific Accent Color for the Diagnostic Form */
+.btn-submit {
+    background-color: #e65127;
+    /* Fenix orange-red accent */
+    color: white;
+    border: none;
+    padding: 1rem;
+    width: 100%;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2rem;
+    transition: opacity 0.3s;
+}
+
+.btn-submit:hover {
+    opacity: 0.9;
+    color: white;
+}
+
+/* --- UTILITIES --- */
+.link-impact {
+    font-weight: 700;
+    color: var(--primary-teal);
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+.pre-footer-cta {
+    background: #666;
+    /* Fenix dark grey utility area */
+    color: white;
+    padding: 5rem 0;
+}
+
+/* Responsive Overrides */
+@media (max-width: 991px) {
+    .contact-form-container {
+        padding: 3rem 1.5rem;
+    }
+}

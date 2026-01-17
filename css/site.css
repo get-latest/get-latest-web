@@ -1,0 +1,346 @@
+/* --- VARIABLES & BASE --- */
+:root {
+    --primary-teal: #26a69a;
+    --primary-teal-dark: #1f8a80;
+    --dark-navy: #001f3f;
+    --get-latest-blue: #628bc0;
+    --accent-pink: #ff4d6d;
+    --bg-mint: #f0fdfa;
+    --text-dark: #1a1a1a;
+    --text-muted: #555;
+    --white: #ffffff;
+    --font-heading: "Space Grotesk-Bold", sans-serif;
+    --font-body: "Space Grotesk", sans-serif;
+    --container-width: 1200px;
+    --transition: all 0.3s ease;
+}
+
+/* --- RESET & TYPOGRAPHY --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    line-height: 1.4;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.0;
+}
+
+h1 {
+    font-size: clamp(2.2rem, 5vw + 1rem, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw + 1rem, 3.0rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw + 1rem, 2.3rem);
+}
+
+h4 {
+    font-size: clamp(1.1rem, 2vw + 0.5rem, 1.2rem);
+}
+
+.btn {
+    background-color: var(--get-latest-blue) !important;
+    border-color: var(--get-latest-blue) !important;
+    color: var(--white) !important;
+    transition: filter 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover,
+.btn:focus,
+.btn:active {
+    filter: brightness(0.8);
+    /* Force the background to stay your brand color so the filter does the work */
+    background-color: var(--get-latest-blue) !important;
+    border-color: var(--get-latest-blue) !important;
+    color: var(--white) !important;
+}
+
+.dot-pink {
+    color: var(--accent-pink);
+}
+
+.text-primary-teal {
+    color: var(--primary-teal) !important;
+}
+
+.bg-dark-navy {
+    background-color: var(--dark-navy) !important;
+}
+
+/* --- SHARED COMPONENTS (Used on multiple pages) --- */
+
+/* The Split Row / Z-Pattern */
+.about-split-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    min-height: 500px;
+}
+
+.about-split-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-split-row .about-img-wrapper,
+.about-split-row .about-text-content {
+    flex: 1;
+    min-width: 50%;
+}
+
+.about-text-content {
+    padding: clamp(2rem, 8vw, 6rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* --- SHARED COMPONENTS --- */
+
+/* Blog Iframe Container (Shared by Home and Blog) */
+.blog-iframe-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    height: 600px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.blog-iframe-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Utilities */
+.bg-dark-navy {
+    background-color: var(--dark-navy) !important;
+}
+
+.text-white {
+    color: var(--white) !important;
+}
+
+.text-primary-teal {
+    color: var(--primary-teal) !important;
+}
+
+/* The Standard Card */
+.card {
+    padding: 2rem;
+    border-radius: 12px;
+    border: none !important;
+    transition: var(--transition);
+    background-color: var(--white);
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* --- HEADER --- */
+header {
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    background: var(--white);
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 900;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    align-items: flex-end;
+    display: flex;
+    gap: 2rem;
+    padding-bottom: 5px;
+}
+
+.nav-links .btn {
+    align-self: auto;
+    margin-bottom: -5px;
+}
+
+.nav-links a {
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+
+.nav-link.active {
+    position: relative;
+    color: var(--primary-teal) !important;
+}
+
+.nav-link.active::before {
+    content: '•';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--accent-pink);
+    font-size: 1.2rem;
+}
+
+.nav-link.btn.active,
+.nav-link.btn:hover {
+    color: var(--white) !important;
+    background-color: var(--primary-teal-dark) !important;
+}
+
+.nav-link.btn.active::before {
+    display: none !important;
+}
+
+/* Target the specific contact button by its ID to ensure highest specificity */
+#nav-contact {
+    background-color: var(--primary-teal) !important;
+    border-color: var(--primary-teal) !important;
+    transition: filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+#nav-contact:hover,
+#nav-contact:focus,
+#nav-contact:active {
+    filter: brightness(0.8) !important;
+    background-color: var(--primary-teal) !important;
+    /* Forces it to stay teal while the filter darkens it */
+    border-color: var(--primary-teal) !important;
+    /* Prevents the border from switching to Bootstrap blue */
+    color: var(--white) !important;
+    box-shadow: none !important;
+    /* Removes the default Bootstrap focus halo */
+}
+
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: var(--white);
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        margin-top: 1rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+        display: flex !important;
+    }
+
+    .nav-link.active::before {
+        display: none;
+    }
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(38, 166, 154, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+/* --- FOOTER COMPONENT --- */
+footer {
+    background: var(--dark-navy);
+    color: var(--white);
+    padding: 4rem 0 2rem;
+    margin-top: 5rem;
+}
+
+/* Fix for horizontal distribution and alignment */
+.footer .row.g-4 {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+/* Ensures each link column takes up equal space and aligns text to the left */
+.footer .col-lg {
+    flex: 1;
+    text-align: left;
+    /* Restores left-alignment from the screenshot */
+}
+
+.footer h4 {
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+
+.footer-links {
+    padding-left: 0;
+    /* Removes default UL padding */
+}
+
+.footer-links li {
+    margin-bottom: 0.3rem;
+    /* Restores breathable vertical spacing */
+}
+
+.footer-links a {
+    color: var(--white) !important;
+    /* Restores white text color */
+    opacity: 0.7;
+    /* Restores the 'muted' look */
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: var(--primary-teal) !important;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    opacity: 0.5;
+    font-size: 0.8rem;
+}

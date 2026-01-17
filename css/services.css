@@ -1,0 +1,50 @@
+/* --- SERVICE PAGE UNIQUE STYLES --- */
+
+/* Custom Outline Buttons */
+.btn-outline-primary {
+    color: var(--primary-teal);
+    border-color: var(--primary-teal);
+    transition: var(--transition);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-teal);
+    border-color: var(--primary-teal);
+    color: var(--white);
+}
+
+/* Integrated Support Flow (The Arrow Section) */
+.icon-box.h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+    .col-md-1 {
+        font-size: 1.5rem;
+        color: var(--primary-teal);
+        opacity: 0.5;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* List Styling within Service Blocks */
+.about-text-content ul li {
+    position: relative;
+    padding-left: 5px;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive Overrides */
+@media (max-width: 991px) {
+    .about-split-row .about-img-wrapper img {
+        height: 350px;
+    }
+
+    .about-split-row.reverse {
+        flex-direction: column;
+    }
+}
