@@ -1,44 +1,12 @@
-/* STRATEGIC PILLARS GRID */
-.strategic-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
+/* ===================================
+   ABOUT PAGE SPECIFIC STYLES
+   =================================== */
 
-.strategy-card {
-    background: var(--white);
-    padding: 2.5rem;
-    border-radius: 12px;
-    text-align: left;
-    transition: var(--transition);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.strategy-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
-}
-
-.icon-box {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    display: inline-block;
-}
-
-/* CTA BANNER */
-.cta-banner {    
-    padding: 6rem 0;
-    text-align: center;
-}
-
-/* --- STRATEGIC PILLARS (PILLAR-ITEM VARIANT) --- */
-
+/* STRATEGIC PILLARS SECTION (Mint Background) */
 .pillars-section-mint {
     background-color: var(--bg-mint);
-    /* Replaced teal with primary mint */
     color: var(--text-dark);
     padding: 0;
-    /* Maintains tight vertical spacing */
 }
 
 .pillars-section-mint h2 {
@@ -52,15 +20,13 @@
     margin: 0 auto 0 auto;
 }
 
-/* Clear grid structure with no separators */
 .strategic-pillars-row {
     border: none !important;
 }
 
 .pillar-item {
     padding: 0.9rem 2rem;
-    /* Adds the vertical line between items */
-    border-right: 1px solid var(--primary-teal);    
+    border-right: 1px solid var(--primary-teal);
     transition: var(--transition);
     display: flex;
     flex-direction: column;
@@ -76,9 +42,7 @@
     height: 48px;
     color: var(--primary-teal);
     margin: 0 auto 1.25rem auto;
-    /* Centers the icon and maintains bottom spacing */
     display: block;
-    /* Required for margin: auto to function on the div */
 }
 
 .pillar-content h3 {
@@ -94,7 +58,7 @@
     line-height: 1.6;
 }
 
-/* Responsive: Convert vertical lines to horizontal lines on mobile devices */
+/* RESPONSIVE */
 @media (max-width: 991px) {
     .pillar-item {
         border-right: none;

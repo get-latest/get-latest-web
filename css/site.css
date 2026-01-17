@@ -1,3 +1,25 @@
+/* ===================================
+   SITE.CSS - SHARED STYLES & UTILITIES
+   ===================================
+   
+   This file contains:
+   - CSS Variables & Base Styles
+   - Typography
+   - Custom Brand Components (split-row, cards)
+   - Header & Navigation
+   - Footer
+   - Backward Compatibility Aliases
+   
+   Use Bootstrap classes for:
+   - Layouts (.container, .row, .col-*)
+   - Backgrounds (.bg-white, .bg-dark, .bg-light)
+   - Spacing (.py-5, .px-4, .my-3, etc.)
+   
+   Page-specific styles are in:
+   - index.css (homepage only)
+   - about.css (about page only)
+   =================================== */
+
 /* --- VARIABLES & BASE --- */
 :root {
     --primary-teal: #26a69a;
@@ -90,43 +112,97 @@ h4 {
     background-color: var(--bg-mint) !important;    
 }
 
-/* --- SHARED COMPONENTS (Used on multiple pages) --- */
-
-/* The Split Row / Z-Pattern */
-.about-split-row {
+/* --- SPLIT ROW / Z-PATTERN LAYOUT --- */
+/* Custom component for alternating image/text sections */
+.split-row {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
     min-height: 500px;
 }
 
-.about-split-row.reverse {
+.split-row.reverse {
     flex-direction: row-reverse;
 }
 
-.about-split-row .about-img-wrapper,
-.about-split-row .about-text-content {
+.split-row .split-img,
+.split-row .split-content {
     flex: 1;
     min-width: 50%;
 }
 
-.about-text-content {
+.split-content {
     padding: clamp(1rem, 2rem, 4rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.about-img-wrapper img {
+.split-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
+@media (max-width: 991px) {
+    .split-row {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .split-img img {
+        height: 300px;
+    }
+}
+
+/* --- STANDARD CARD COMPONENT --- */
+.card {
+    padding: 2rem;
+    border-radius: 12px;
+    border: none !important;
+    transition: var(--transition);
+    background-color: var(--white);
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* Card Variants */
+.card-teal {
+    background-color: var(--primary-teal);
+    color: var(--white);
+    border: 1.5px solid var(--primary-teal-dark) !important;
+}
+
+.card-teal p {
+    opacity: 0.9;
+}
+
+.card-white {
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
+}
+
+.card-border {
+    border: 1px solid rgba(0, 0, 0, 0.05) !important;
+}
+
 /* --- SHARED COMPONENTS --- */
 
-/* Blog Iframe Container (Shared by Home and Blog) */
+/* Blog Iframe Container */
 .blog-iframe-container {
     position: relative;
     width: 100%;
@@ -145,9 +221,75 @@ h4 {
     border: none;
 }
 
-/* Utilities */
-.bg-dark-navy {
-    background-color: var(--dark-navy) !important;
+/* --- BACKWARD COMPATIBILITY ALIASES --- */
+/* Keep old class names working for existing HTML */
+.about-split-row { @extend .split-row; }
+.about-img-wrapper { @extend .split-img; }
+.about-text-content { @extend .split-content; }
+.card.teal { @extend .card-teal; }
+.card.white { @extend .card-white; }
+
+/* Actual backward compatibility (CSS doesn't support @extend, use duplicate declarations) */
+.about-split-row,
+.split-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    min-height: 500px;
+}
+
+.about-split-row.reverse,
+.split-row.reverse {
+    flex-direction: row-reverse;
+}
+
+.about-split-row .about-img-wrapper,
+.about-split-row .split-img,
+.split-row .about-img-wrapper,
+.split-row .split-img {
+    flex: 1;
+    min-width: 50%;
+}
+
+.about-img-wrapper img,
+.split-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.about-split-row .about-text-content,
+.about-split-row .split-content,
+.split-row .about-text-content,
+.split-row .split-content {
+    flex: 1;
+    min-width: 50%;
+}
+
+.about-text-content,
+.split-content {
+    padding: clamp(1rem, 2rem, 4rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card.teal,
+.card-teal {
+    background-color: var(--primary-teal);
+    color: var(--white);
+    border: 1.5px solid var(--primary-teal-dark) !important;
+}
+
+.card.teal p,
+.card-teal p {
+    opacity: 0.9;
+}
+
+.card.white,
+.card-white {
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
 }
 
 .text-white {
@@ -156,21 +298,6 @@ h4 {
 
 .text-primary-teal {
     color: var(--primary-teal) !important;
-}
-
-/* The Standard Card */
-.card {
-    padding: 2rem;
-    border-radius: 12px;
-    border: none !important;
-    transition: var(--transition);
-    background-color: var(--white);
-    height: 100%;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
 }
 
 /* --- HEADER --- */

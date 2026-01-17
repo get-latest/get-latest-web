@@ -1,4 +1,8 @@
-/* HERO & VISUALS */
+/* ===================================
+   INDEX PAGE SPECIFIC STYLES
+   =================================== */
+
+/* HERO SECTION */
 .hero {
     padding: clamp(3rem, 10vw, 5rem) 0;
 }
@@ -33,7 +37,7 @@
     object-fit: cover;
 }
 
-/* HOMEPAGE ABOUT BOX */
+/* ABOUT BOX (Homepage) */
 .about-box {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -42,12 +46,12 @@
     color: var(--white);
 }
 
-.about-img-wrapper {
+.about-box .about-img-wrapper {
     height: 100%;
     display: flex;
 }
 
-.about-img {
+.about-box .about-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -55,7 +59,7 @@
     display: block;
 }
 
-.about-text {
+.about-box .about-text {
     padding: clamp(2rem, 5vw, 2.5rem);
 }
 
@@ -73,46 +77,7 @@
     margin: 3rem 0;
 }
 
-/* CARDS (Process Section) */
-.card {
-    padding: 2rem;
-    border-radius: 12px;
-    border: none !important;
-    transition: var(--transition);
-    background-color: var(--white);
-    height: 100%;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-}
-
-.card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
-}
-
-.card p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-}
-
-.card.teal {
-    background-color: var(--primary-teal);
-    color: var(--white);
-    border: 1.5px solid var(--primary-teal-dark) !important;
-}
-
-.card.teal p {
-    opacity: 0.9;
-}
-
-.card.white {
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0.4);
-}
-
-/* RESULTS */
+/* RESULTS SECTION */
 .results {
     background-color: var(--bg-mint);
     padding: 5rem 0;
@@ -136,31 +101,13 @@
     width: 24px;
 }
 
-/* BLOG IFRAME */
-.blog-iframe-container {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    height: 600px;
-    margin: 0 auto;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-}
-
-.blog-iframe-container iframe {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
+/* RESPONSIVE */
 @media (max-width: 991px) {
     .about-box {
         grid-template-columns: 1fr;
     }
 
-    .about-img {
+    .about-box .about-img {
         height: 300px;
     }
 
