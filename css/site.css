@@ -86,6 +86,10 @@ h4 {
     background-color: var(--dark-navy) !important;
 }
 
+.bg-mint {
+    background-color: var(--bg-mint) !important;    
+}
+
 /* --- SHARED COMPONENTS (Used on multiple pages) --- */
 
 /* The Split Row / Z-Pattern */
@@ -107,7 +111,7 @@ h4 {
 }
 
 .about-text-content {
-    padding: clamp(2rem, 8vw, 6rem);
+    padding: clamp(0.1rem, 8vw, 0.1rem, 0.5rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -283,8 +287,7 @@ nav {
 footer {
     background: var(--dark-navy);
     color: var(--white);
-    padding: 4rem 0 2rem;
-    margin-top: 5rem;
+    padding: 4rem 0 2rem;    
 }
 
 /* Fix for horizontal distribution and alignment */
