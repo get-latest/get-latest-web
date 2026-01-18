@@ -3,7 +3,7 @@ layout: post
 title: "Why Your Best Leads Still Don’t Convert"
 author: Justin Henriksen
 description: "When strong leads fail, it’s rarely about quality. It’s about delay, ambiguity, and silence."
-date: 2026-01-18
+date: 2025-12-30
 categories: [revenue, execution]
 tags: [leads, conversion, speed, visibility]
 ---

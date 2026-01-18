@@ -3,7 +3,7 @@ layout: post
 title: "You Don’t Have a Follow-Up Problem. You Have an Ownership Problem."
 author: Justin Henriksen
 description: "Follow-up doesn’t fail because people forget. It fails because ownership is implied instead of enforced."
-date: 2026-01-18
+date: 2026-01-05
 categories: [revenue, execution]
 tags: [ownership, follow-up, accountability, visibility]
 ---

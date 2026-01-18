@@ -3,7 +3,7 @@ layout: post
 title: "The Hidden Cost of “We’ll Catch It in the Forecast”"
 author: Justin Henriksen
 description: "Forecasts don’t prevent problems. They reveal them after revenue is already lost."
-date: 2026-01-18
+date: 2026-01-19
 categories: [revenue, execution]
 tags: [forecasting, visibility, accountability]
 ---
