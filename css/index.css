@@ -241,8 +241,7 @@
 
 .card.blog-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-    border-color: var(--primary-teal);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);    
 }
 
 .card.blog-card:hover::before {
@@ -292,17 +291,40 @@
     transition: all 0.3s ease;
 }
 
-.card.blog-card .btn-outline-primary:hover {
-    background-color: var(--primary-teal);
-    border-color: var(--primary-teal);
+.card.blog-card .btn-outline-primary:hover {    
     color: white;
     transform: translateX(4px);
 }
 
 /* Alternating Background Colors */
-.card.blog-card.blog-card-mint {
-    background: var(--bg-mint);
-    border-color: var(--primary-teal) !important;
+.card.blog-card.blog-card-dark {
+    background: var(--dark-navy);
+    border-color: black !important;
+    color: var(--white);
+}
+
+.card.blog-card.blog-card-dark h3 a {
+    color: var(--white);
+}
+
+.card.blog-card.blog-card-dark .text-muted {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.card.blog-card.blog-card-dark .card-text {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.card.blog-card.blog-card-dark .btn-outline-primary {
+    background-color: var(--white);
+    border-color: var(--white);
+    color: var(--dark-navy);
+}
+
+.card.blog-card.blog-card-dark .btn-outline-primary:hover {
+    background-color: var(--primary-teal);
+    border-color: var(--primary-teal);
+    color: var(--white);
 }
 
 .card.blog-card.blog-card-white {
