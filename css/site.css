@@ -26,8 +26,9 @@
     --primary-teal-mid: #1ab3a4;
     --primary-teal-dark: #159e91;
     --get-latest-blue: #4f7dff;
-
-    --dark-navy: #001f3f;    
+    --cta-primary: #3b6cff;
+    --cta-secondary: #1ec7b6;
+    --dark-navy: #001f3f;
     --accent-pink: #ff4d6d;
     --bg-mint: #f0fdfa;
     --text-dark: #1a1a1a;
@@ -86,6 +87,10 @@ h5 {
     font-weight: 600;
 }
 
+h5.text-primary-dark {
+    color: var(--dark-navy) !important;
+}
+
 .btn {
     background-color: var(--get-latest-blue) !important;
     border-color: var(--get-latest-blue) !important;
@@ -93,14 +98,26 @@ h5 {
     transition: filter 0.3s ease, background-color 0.3s ease;
 }
 
+.btn-cta-primary {
+    background-color: var(--cta-primary) !important;
+    border-color: color-mix(in srgb, var(--cta-primary) 80%, black 20%) !important;
+}
+
+.btn-cta-secondary {
+    background-color: var(--cta-secondary) !important;
+    border-color: color-mix(in srgb, var(--cta-secondary) 80%, black 20%) !important;
+}
+
 .btn:hover,
 .btn:focus,
 .btn:active {
-    filter: brightness(0.8);
-    /* Force the background to stay your brand color so the filter does the work */
-    background-color: var(--get-latest-blue) !important;
-    border-color: var(--get-latest-blue) !important;
+    filter: brightness(0.8);    
     color: var(--white) !important;
+}
+
+.btn-cta-primary:hover,
+.btn-cta-secondary:hover {
+    transform: translateY(-1px);
 }
 
 .dot-pink {
@@ -292,14 +309,9 @@ h5 {
 
 .card.teal,
 .card-teal {
-    background-color: var(--primary-teal-mid);
-    color: var(--white);
-    border: 1.5px solid var(--primary-teal-dark) !important;
-}
-
-.card.teal p,
-.card-teal p {
-    opacity: 0.9;
+    background-color: color-mix(in srgb, var(--primary-teal-mid) 90%, white 10%);
+    border: 1.5px solid var(--primary-teal-mid) !important;
+    color: var(--white);    
 }
 
 .card.white,
@@ -430,16 +442,16 @@ nav {
    =================================== */
 
 /* STRATEGIC PILLARS SECTION */
-.pillars-section-mint {   
+.pillars-section-mint {
     background-color: var(--bg-mint);
 }
 
-.pillars-section-white {   
+.pillars-section-white {
     background-color: var(--bg-white);
 }
 
 .pillars-section-mint,
-.pillars-section-white {    
+.pillars-section-white {
     color: var(--text-dark);
     padding: 0;
 }
