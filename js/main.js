@@ -27,22 +27,25 @@ async function loadComponent(elementId, filePath) {
  * Highlights active link and handles Bootstrap specific 'active' states
  */
 function setActiveNavLink() {
-    // 1. Get current filename, default to home.html if path is empty
-    let currentPage = window.location.pathname.split("/").pop();
-    if (currentPage === "" || currentPage === "/") {
-        currentPage = "home.html"; // Adjust if your home is index.html
+    // Get current page path
+    let currentPath = window.location.pathname;
+    
+    // Default to index.html if at root
+    if (currentPath === "" || currentPath === "/") {
+        currentPath = "/index.html";
     }
 
-    // 2. Target the links inside your nav
+    // Target the links inside your nav
     const links = document.querySelectorAll('.navbar-nav .nav-link');
 
     links.forEach(link => {
-        // Remove existing active classes just in case
+        // Remove existing active classes
         link.classList.remove('active');
         link.removeAttribute('aria-current');
 
-        // 3. Match the href (handles absolute and relative paths)
-        if (link.getAttribute('href') === currentPage) {
+        // Match the href against current path
+        const href = link.getAttribute('href');
+        if (href === currentPath || (currentPath.endsWith(href) && href.startsWith('/'))) {
             link.classList.add('active');
             // Accessibility: Tells screen readers this is the current page
             link.setAttribute('aria-current', 'page');
