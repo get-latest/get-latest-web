@@ -22,10 +22,12 @@
 
 /* --- VARIABLES & BASE --- */
 :root {
-    --primary-teal: #26a69a;
-    --primary-teal-dark: #1f8a80;
-    --dark-navy: #001f3f;
-    --get-latest-blue: #628bc0;
+    --primary-teal: #1ec7b6;
+    --primary-teal-mid: #1ab3a4;
+    --primary-teal-dark: #159e91;
+    --get-latest-blue: #4f7dff;
+
+    --dark-navy: #001f3f;    
     --accent-pink: #ff4d6d;
     --bg-mint: #f0fdfa;
     --text-dark: #1a1a1a;
@@ -182,12 +184,6 @@ h4 {
 }
 
 /* Card Variants */
-.card-teal {
-    background-color: var(--primary-teal);
-    color: var(--white);
-    border: 1.5px solid var(--primary-teal-dark) !important;
-}
-
 .card-teal p {
     opacity: 0.9;
 }
@@ -291,7 +287,7 @@ h4 {
 
 .card.teal,
 .card-teal {
-    background-color: var(--primary-teal);
+    background-color: var(--primary-teal-mid);
     color: var(--white);
     border: 1.5px solid var(--primary-teal-dark) !important;
 }
@@ -381,8 +377,8 @@ nav {
 
 /* Target the specific contact button by its ID to ensure highest specificity */
 #nav-contact {
-    background-color: var(--primary-teal) !important;
-    border-color: var(--primary-teal) !important;
+    background-color: var(--primary-teal-mid) !important;
+    border-color: var(--primary-teal-dark) !important;
     transition: filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
 }
 
@@ -392,7 +388,7 @@ nav {
     filter: brightness(0.8) !important;
     background-color: var(--primary-teal) !important;
     /* Forces it to stay teal while the filter darkens it */
-    border-color: var(--primary-teal) !important;
+    border-color: var(--primary-teal-mid) !important;
     /* Prevents the border from switching to Bootstrap blue */
     color: var(--white) !important;
     box-shadow: none !important;
