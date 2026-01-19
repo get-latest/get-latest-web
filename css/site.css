@@ -120,6 +120,15 @@ h5.text-primary-dark {
     transform: translateY(-1px);
 }
 
+@media (max-width: 768px) {
+    .btn-cta-primary,
+    .btn-cta-secondary {
+        display: block;
+        width: 100%;
+        margin: 0 0 1rem 0 !important;
+    }
+}
+
 .dot-pink {
     color: var(--accent-pink);
 }
@@ -421,11 +430,32 @@ nav {
         margin-top: 1rem;
     }
 
+    .navbar-nav {
+        margin-left: 0 !important;
+        align-items: flex-start !important;
+    }
+
     .nav-links {
         flex-direction: column;
         gap: 1.5rem;
-        text-align: center;
+        text-align: left;
         display: flex !important;
+        align-items: flex-start !important;
+    }
+
+    .nav-item {
+        margin-left: 0 !important;
+        width: 100%;
+    }
+
+    .nav-link:not(.btn) {
+        text-align: left !important;
+        padding-left: 0 !important;
+    }
+
+    .nav-link.btn {
+        display: inline-block;
+        width: auto;
     }
 
     .nav-link.active::before {
