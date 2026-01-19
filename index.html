@@ -80,17 +80,19 @@
                     <div class="col-lg-6 bg-dark-navy text-white p-5">
                         <div class="about-text">
                             <h2 class="text-center mb-4">About Us<span class="dot-pink">.</span></h2>
-                            <p>AI adoption is no longer optional. It's expected by boards, peers, customers, and teams.
-                                But
-                                the landscape is cluttered with tools, vendors, and self-proclaimed experts.</p>
+                            <p>AI adoption is no longer optional. It's expected by internal teams, boards, and
+                                customers.
+                                But the landscape is cluttered with tools, vendors, and self-proclaimed experts.</p>
                             <p>For leaders who own outcomes, the risk isn't moving too slowly. It's investing in the
-                                wrong
-                                things, for the wrong reasons, with no clear path to ROI.</p>
+                                wrong things, for the wrong reasons, with no clear path to ROI.</p>
                             <p>Great initiatives fail before they deliver value. Not because the technology doesn't
-                                work,
-                                but because teams jump to tools before answering harder questions.</p>
+                                work, but because teams jump to tools before answering harder questions.</p>
                             <p>Get Latest exists to fix that.</p>
-                            <p><strong>Clear initiatives, measurable outcomes, and accountable execution.</strong></p>
+                            <ul class="mb-0 list-unstyled">
+                                <li><strong>Clear initiatives.</strong></li>
+                                <li><strong>Measurable outcomes.</strong></li>
+                                <li><strong>Accountable execution.</strong></li>
+                            </ul>
                         </div>
                     </div>
 
@@ -269,50 +271,61 @@
 
                     <div class="col">
                         <article class="card white h-100">
-                            <h3 class="fw-bold">Identify What Matters</h3>
-                            <p class="text-secondary">We identify where AI can actually improve revenue, margin, or
-                                execution. This is not brainstorming. It is selection.</p>
+                            <h3 class="fw-bold">Define the Problem</h3>
+                            <p class="text-secondary">
+                                We isolate business problems worth solving. Not ideas. Not tools.
+                                Real initiatives tied to revenue, margin, or execution.
+                            </p>
                         </article>
                     </div>
 
                     <div class="col">
                         <article class="card teal h-100">
-                            <h3 class="fw-bold">Initiative to Results</h3>
-                            <p>Each initiative is grounded in clear economics: what changes, why it matters, and how
-                                value will be measured before any work begins.</p>
+                            <h3 class="fw-bold">Lock the Outcome</h3>
+                            <p>
+                                We define what what changes, why it matters, and how value will be measured before any
+                                work begins.
+                            </p>
                         </article>
                     </div>
 
                     <div class="col">
                         <article class="card white h-100">
-                            <h3 class="fw-bold">Build What Matters</h3>
-                            <p class="text-secondary">We build the solutions required to create
-                                the outcome. No demos or experiments. Only what supports the goal.</p>
+                            <h3 class="fw-bold">Build the Solution</h3>
+                            <p class="text-secondary">
+                                We build the solutions required to produce the outcome.
+                                No demos. No experiments. Only what supports the goal.
+                            </p>
                         </article>
                     </div>
 
                     <div class="col">
                         <article class="card teal h-100">
-                            <h3 class="fw-bold">Execute and Deliver</h3>
-                            <p>We execute quickly. No more waiting for months to see results - it's weeks or less.
-                                Progress is measured against agreed outcomes, not
-                                activity.</p>
+                            <h3 class="fw-bold">Ship and Execute</h3>
+                            <p>
+                                We deliver quickly and put the solution to work in the business.
+                                No more waiting for months to see results. It's weeks or less.
+                            </p>
                         </article>
                     </div>
 
                     <div class="col">
                         <article class="card white h-100">
-                            <h3 class="fw-bold">Prove the Impact</h3>
-                            <p class="text-secondary">Results are validated against the original success criteria.
-                                Revenue, margin, time saved, or decision quality ROI is clear.</p>
+                            <h3 class="fw-bold">Verify the Impact</h3>
+                            <p class="text-secondary">
+                                We validate results against the original success criteria.
+                                Revenue, margin, time saved, or decision quality. ROI is clear.
+                            </p>
                         </article>
                     </div>
 
                     <div class="col">
                         <article class="card teal h-100">
-                            <h3 class="fw-bold">Protect the ROI</h3>
-                            <p>We support and maintain what we build. As conditions change, we help adjust, fix, or
-                                refine systems so results do not erode over time.</p>
+                            <h3 class="fw-bold">Sustain the ROI</h3>
+                            <p>
+                                We support and maintain what we build. As conditions change, we help adjust, fix, or
+                                refine solutions so results do not erode over time.
+                            </p>
                         </article>
                     </div>
 
@@ -341,7 +354,8 @@
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mt-3">
                     {% for post in site.posts limit:3 %}
                     <div class="col">
-                        <article class="card blog-card {% cycle 'blog-card-dark', 'blog-card-white', 'blog-card-dark' %} h-100">
+                        <article
+                            class="card blog-card {% cycle 'blog-card-dark', 'blog-card-white', 'blog-card-dark' %} h-100">
                             <div class="card-body">
                                 <h3 class="mb-3">
                                     <a href="{{ post.url }}" class="text-decoration-none">
