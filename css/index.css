@@ -22,166 +22,26 @@
     position: relative;
 }
 
-.blob-main {
-    width: 100%;
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    overflow: hidden;
-}
-
-.blob-main img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-}
-
-.collage-container {
-    display: grid;
-    /* Define a 2-column grid. The left column is narrower than the right. */
-    grid-template-columns: 1fr 1.4fr;
-    /* Define two rows. The bottom row is for the small image. */
-    grid-template-rows: auto auto;
-    gap: 20px;
-    /* Space between images */
-    max-width: 800px;
-    margin: 50px auto;
-    /* Center the collage on the page */
-}
-
-.collage-item {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    /* Ensure the mask covers the entire container */
-    -webkit-mask-size: cover;
-    mask-size: cover;
-    -webkit-mask-position: center;
-    mask-position: center;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-}
-
-.collage-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    /* Ensures the image fills the blob shape without stretching */
-    display: block;
-}
-
-/* --- Blob Shapes --- */
-/* We use inline SVG data for the mask-image property */
-
-/* Top-Left Blob */
-.collage-item--1 {
-    grid-column: 1;
-    grid-row: 1;
-    /* This defines the shape */
-    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M43.8,-52.3C57.2,-41.3,68.7,-26.2,73.4,-8.6C78.1,9,76,29,65.9,44.7C55.8,60.4,37.7,71.8,18.4,77.2C-0.9,82.6,-21.4,82,-39.2,73.4C-57,64.9,-72.1,48.4,-79.8,29.3C-87.5,10.3,-87.8,-11.4,-79.3,-29.8C-70.7,-48.3,-53.3,-63.5,-35.8,-72.4C-18.4,-81.3,0,-84,15.4,-79.7C30.7,-75.4,61.4,-63.3,43.8,-52.3Z" transform="translate(100 100)"/></svg>');
-    mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M43.8,-52.3C57.2,-41.3,68.7,-26.2,73.4,-8.6C78.1,9,76,29,65.9,44.7C55.8,60.4,37.7,71.8,18.4,77.2C-0.9,82.6,-21.4,82,-39.2,73.4C-57,64.9,-72.1,48.4,-79.8,29.3C-87.5,10.3,-87.8,-11.4,-79.3,-29.8C-70.7,-48.3,-53.3,-63.5,-35.8,-72.4C-18.4,-81.3,0,-84,15.4,-79.7C30.7,-75.4,61.4,-63.3,43.8,-52.3Z" transform="translate(100 100)"/></svg>');
-    /* Adjust height relative to width for this specific shape */
-    aspect-ratio: 3 / 4;
-}
-
-/* Right-Side Large Blob */
-.collage-item--2 {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-    /* Spans both rows */
-    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M54.3,-62.7C69.2,-53,79.9,-36.3,84.3,-18C88.7,0.3,86.8,20.2,77.3,37.3C67.7,54.4,50.5,68.8,31.5,75.8C12.4,82.8,-8.5,82.5,-28.5,75.4C-48.5,68.4,-67.7,54.6,-78.3,36.5C-89,18.4,-91.1,-3.9,-84.8,-23C-78.6,-42.1,-63.9,-57.9,-47.3,-66.7C-30.7,-75.5,-12.2,-77.3,4.6,-82.8C21.4,-88.3,42.8,-101.5,54.3,-62.7Z" transform="translate(100 100)"/></svg>');
-    mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M54.3,-62.7C69.2,-53,79.9,-36.3,84.3,-18C88.7,0.3,86.8,20.2,77.3,37.3C67.7,54.4,50.5,68.8,31.5,75.8C12.4,82.8,-8.5,82.5,-28.5,75.4C-48.5,68.4,-67.7,54.6,-78.3,36.5C-89,18.4,-91.1,-3.9,-84.8,-23C-78.6,-42.1,-63.9,-57.9,-47.3,-66.7C-30.7,-75.5,-12.2,-77.3,4.6,-82.8C21.4,-88.3,42.8,-101.5,54.3,-62.7Z" transform="translate(100 100)"/></svg>');
-    aspect-ratio: 4 / 5;
-    align-self: center;
-}
-
-/* Bottom-Left Small Blob */
-.collage-item--3 {
-    grid-column: 1;
-    grid-row: 2;
-    width: 70%;
-    /* Make it smaller than its container column */
-    justify-self: end;
-    /* Align it to the right side of its column */
-    margin-top: -30px;
-    /* Pull it up to overlap slightly */
-    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M42.1,-51.6C54.2,-41.2,63.7,-26.4,68.4,-9.7C73.1,7,73,25.6,65.2,41C57.3,56.4,41.8,68.6,24.2,75.3C6.6,82,-13,83.2,-31.3,76.3C-49.6,69.4,-66.6,54.3,-75.8,35.9C-85,17.5,-86.4,-4.2,-80.4,-22.8C-74.4,-41.4,-60.9,-56.9,-45.7,-66.3C-30.5,-75.7,-13.5,-79,2.1,-81.6C17.7,-84.1,35.4,-82,42.1,-51.6Z" transform="translate(100 100)"/></svg>');
-    mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><path d="M42.1,-51.6C54.2,-41.2,63.7,-26.4,68.4,-9.7C73.1,7,73,25.6,65.2,41C57.3,56.4,41.8,68.6,24.2,75.3C6.6,82,-13,83.2,-31.3,76.3C-49.6,69.4,-66.6,54.3,-75.8,35.9C-85,17.5,-86.4,-4.2,-80.4,-22.8C-74.4,-41.4,-60.9,-56.9,-45.7,-66.3C-30.5,-75.7,-13.5,-79,2.1,-81.6C17.7,-84.1,35.4,-82,42.1,-51.6Z" transform="translate(100 100)"/></svg>');
-    aspect-ratio: 1 / 1;
-}
-
-/* ABOUT BOX (Homepage) */
-.about-box {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: stretch;
-    background: var(--dark-navy);
-    color: var(--white);
-}
-
-.about-box .about-img-wrapper {
-    height: 100%;
-    display: flex;
-}
-
-.about-box .about-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    display: block;
-}
-
-.about-box .about-text {
-    padding: clamp(2rem, 5vw, 2.5rem);
-}
-
-/* PROCESS SECTION */
-.process {
-    padding: 5rem 0;
-    text-align: center;
-}
-
-.process-bar {
-    background: var(--dark-navy);
-    border-radius: 9px;
-    color: var(--white);
-    padding: 2rem;
-    margin: 3rem 0;
-}
-
-/* RESULTS SECTION */
-.results {
-    background-color: var(--bg-mint);
-    padding: 5rem 0;
-}
-
-.results-header p {
-    margin: 0.5rem auto 2rem;
-}
-
-.results-item {
-    display: grid;
-    grid-template-columns: 30px 1fr;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    text-align: left;
-}
-
 .icon-teal {
     fill: var(--primary-teal);
     width: 24px;
 }
 
+/* WHAT WE BUILD - PILLAR ICONS */
+.pillar-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--primary-teal);
+    flex-shrink: 0;
+}
+
+.pillar-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
 /* RESPONSIVE */
 @media (max-width: 991px) {
-    .about-box {
-        grid-template-columns: 1fr;
-    }
-
-    .about-box .about-img {
-        height: 300px;
-    }
-
     .hero {
         text-align: center;
     }
@@ -189,33 +49,13 @@
     .hero-visual {
         margin-top: 2rem;
     }
-
-    .bg-mint .text-center,
-    .bg-mint h3,
-    .bg-mint .lead-text {
-        text-align: left !important;
-    }
-
-    .bg-mint h5,
-    .bg-mint p {
-        text-align: left;
-    }
 }
 
 /* ===================================
    BLOG SECTION STYLES
    =================================== */
 
-.blog-intro h3 {
-    margin-bottom: 1rem;
-}
 
-.blog-intro p {
-    font-size: 1.05rem;
-    line-height: 1.6;
-    max-width: 900px;
-    margin: 0 auto;
-}
 
 /* Blog Card Styling */
 .card.blog-card {
