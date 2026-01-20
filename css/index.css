@@ -89,7 +89,6 @@
 }
 
 .card.blog-card .card-body {
-    padding: 2rem;
     display: flex;
     flex-direction: column;
 }

@@ -63,6 +63,11 @@
     font-size: 1.1rem;
 }
 
+.pillar-icon {
+    width: 24px;
+    height: 24px;
+}
+
 .pre-footer-cta {
     background: #666;
     /* Fenix dark grey utility area */

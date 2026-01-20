@@ -1,5 +1,11 @@
 /* --- SERVICE PAGE UNIQUE STYLES --- */
 
+/* Smaller icons for solutions page hero */
+.pillar-icon {
+    width: 28px;
+    height: 28px;
+}
+
 /* Custom Outline Buttons */
 .btn-outline-primary {
     color: var(--primary-teal);
