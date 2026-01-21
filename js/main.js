@@ -30,9 +30,14 @@ function setActiveNavLink() {
     // Get current page path
     let currentPath = window.location.pathname;
     
-    // Default to index.html if at root
+    // Normalize trailing slashes and empty paths
     if (currentPath === "" || currentPath === "/") {
         currentPath = "/index.html";
+    }
+    
+    // Normalize /blog/ to /blog/index.html for matching
+    if (currentPath === "/blog/" || currentPath === "/blog") {
+        currentPath = "/blog/index.html";
     }
 
     // Target the links inside your nav
@@ -43,11 +48,22 @@ function setActiveNavLink() {
         link.classList.remove('active');
         link.removeAttribute('aria-current');
 
-        // Match the href against current path
-        const href = link.getAttribute('href');
-        if (href === currentPath || (currentPath.endsWith(href) && href.startsWith('/'))) {
+        // Get the href and normalize it
+        let href = link.getAttribute('href');
+        
+        // Normalize href for blog links
+        if (href === "/blog/" || href === "/blog") {
+            href = "/blog/index.html";
+        }
+        
+        // Check for exact match first
+        if (href === currentPath) {
             link.classList.add('active');
-            // Accessibility: Tells screen readers this is the current page
+            link.setAttribute('aria-current', 'page');
+        }
+        // Check if we're on a blog post page - activate blog nav link
+        else if (href === "/blog/index.html" && currentPath.includes("/revenue/execution/")) {
+            link.classList.add('active');
             link.setAttribute('aria-current', 'page');
         }
     });
