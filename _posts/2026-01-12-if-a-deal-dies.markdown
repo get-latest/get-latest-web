@@ -6,8 +6,9 @@ description: "Most revenue doesn’t get lost in big moments. It disappears thro
 date: 2026-01-12
 categories: [revenue, execution]
 tags: [follow-up, pipeline, accountability, visibility]
+featured_image: /images/posts/dead-deals.png
 ---
-
+# Where the good deals go to die
 Most deals don’t get “lost.”
 
 They just stop moving.

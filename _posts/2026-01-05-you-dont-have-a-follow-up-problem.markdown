@@ -6,9 +6,9 @@ description: "Follow-up doesn’t fail because people forget. It fails because o
 date: 2026-01-05
 categories: [revenue, execution]
 tags: [ownership, follow-up, accountability, visibility]
+featured_image: /images/posts/follow-up.png
 ---
-
-## Follow-Up Is Where Deals Go to Die
+# Follow-Up Is Where Deals Go to Die
 
 Not because people don’t care.  
 Not because they’re lazy.

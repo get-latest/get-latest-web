@@ -6,9 +6,9 @@ description: "When strong leads fail, it’s rarely about quality. It’s about 
 date: 2025-12-30
 categories: [revenue, execution]
 tags: [leads, conversion, speed, visibility]
+featured_image: /images/posts/leads.png
 ---
-
-## The Leads Are Not the Problem
+# The Leads Are Not the Problem
 
 You already know this.
 
